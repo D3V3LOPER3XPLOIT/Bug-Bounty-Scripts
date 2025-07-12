@@ -1,0 +1,12 @@
+# Basic subdomain scanner
+import requests
+
+subdomains = ['www', 'api', 'dev']
+domain = 'example.com'
+for sub in subdomains:
+    url = f"http://{sub}.{domain}"
+    try:
+        r = requests.get(url)
+        print(f"[+] Found: {url}")
+    except:
+        pass
